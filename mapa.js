@@ -14,6 +14,7 @@ window.onload = function() {
 	document.getElementById('btn_contador').onclick = function(){ obj.contador(); };
 	document.getElementById('btn_mapa').onclick = function(){ obj.toogleMapa(); };
 	document.getElementById('btn_tablas').onclick = function(){ obj.toogleTabla(); };
+	document.getElementById('btn_personajes').onclick = function(){ obj.tooglePersonajes(); };
 	document.getElementById('calculadora').onkeyup = function(){ obj.calculadora(); };
 	obj.start();
 };
@@ -61,6 +62,9 @@ var obj = {
 	},
 	toogleTabla: ()=>{
 		document.getElementById('divTablas').classList.toggle('esconder');
+	},
+	tooglePersonajes: ()=>{
+		document.getElementById('divInfpersonajes').classList.toggle('esconder');
 	},
 	start: ()=>{
 		const { sizeWidth, sizeHeight, getMousePos, tempPosicion } = obj;
@@ -264,14 +268,9 @@ var obj = {
 				<td>
 					<b>Puntos:</b><br/>
 					<ul id="detallesDatos">
-						<li><b>Iniciativa</b> ${arayHabilidades['Reflejos'] + arayHabilidades['Intelecto']}</li>
-						<li><b>Defensa</b> ${arayHabilidades['Reflejos'] /2 }</li>
-						<li><b>Protección</b> ? </li>
-						<li><b>Aguante</b> ${arayHabilidades['Fortaleza'] + arayHabilidades['Voluntad'] }</li>
-						<li><b>Resistencia</b> ${ (arayHabilidades['Fortaleza'] + arayHabilidades['Voluntad'])*3 }</li>
-						<li><b>Conciencia</b> ${ arayHabilidades['Voluntad'] + arayHabilidades['Intelecto'] }</li>
-						<li><b>Superación</b> ${ arayHabilidades['Voluntad'] + arayHabilidades['Intelecto'] }</li>
-						<li><b>Instinto</b> 2? </li>
+						<li><b>DESTREZA</b> ${arayHabilidades['Acechar'] + arayHabilidades['Afinar'] + arayHabilidades['Destrozar'] + arayHabilidades['Pelear']}</li>
+						<li><b>PERSPICACIA</b> ${arayHabilidades['Analizar'] + arayHabilidades['Cazar'] + arayHabilidades['Estudiar'] + arayHabilidades['Trastear']}</li>
+						<li><b>VOLUNTAD</b> ${arayHabilidades['Armonizar'] + arayHabilidades['Influir'] + arayHabilidades['Mandar'] + arayHabilidades['Socializar']}</li>
 					</ul>
 				</td>
 				<td>

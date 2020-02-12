@@ -42,10 +42,18 @@ var Jugador = function(tipo){
 	this.transfondos = prompt("Transfondos:", "");;
 	this.armas = [];
 	this.habilidades = [
-		{nombre:'Fortaleza', puntos: 0, des: ''},
-		{nombre:'Reflejos', puntos: 0, des: ''},
-		{nombre:'Voluntad', puntos: 0, des: ''},
-		{nombre:'Intelecto', puntos: 0, des: ''},
+		{nombre:'Acechar', puntos: 0, des: ''},
+		{nombre:'Afinar', puntos: 0, des: ''},
+		{nombre:'Analizar', puntos: 0, des: ''},
+		{nombre:'Armonizar', puntos: 0, des: ''},
+		{nombre:'Cazar', puntos: 0, des: ''},
+		{nombre:'Destrozar', puntos: 0, des: ''},
+		{nombre:'Estudiar', puntos: 0, des: ''},
+		{nombre:'Influir', puntos: 0, des: ''},
+		{nombre:'Mandar', puntos: 0, des: ''},
+		{nombre:'Pelear', puntos: 0, des: ''},
+		{nombre:'Socializar', puntos: 0, des: ''},
+		{nombre:'Trastear', puntos: 0, des: ''},
 	];
 	this.datos = [
 		{nombre:'Fuerza', pref:'FU', puntos: 0},
@@ -140,8 +148,8 @@ Jugador.prototype.setHabilidades = function(nombre){
 		if(ha.nombre == nombre){
 			var tmp = prompt(`${ha.nombre} puntos`, `${ha.puntos}`);
 			ha.puntos = parseInt(tmp);
-			var tmp = prompt(`${ha.nombre} descripción`, `${ha.des}`);
-			ha.des = tmp;
+			//var tmp = prompt(`${ha.nombre} descripción`, `${ha.des}`);
+			//ha.des = tmp;
 		}
 	});
 }
