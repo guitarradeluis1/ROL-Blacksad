@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>ROL Blades in the dark</title>
+	<style>
+	body{
+		background-color: #2e2e2e;
+		color: #ffffff;
+	}
+	.esconder{
+		display:none;
+	}
+	.cudro {
+		border: 2px solid #ffffff;
+	}
+	.cudroData {
+		border: 2px solid #0ec526;
+	}
+	.cudroNpc {
+		border: 2px solid #c5df68;
+	}
+	.cudroContador {
+		border: 2px solid #c889fc;
+	}
+	</style>
+</head>
+	<body>
+		<img src="./mapa1.jpg" style="display:none" >
+		<button id="btn_size"> Tamaño JG </button>
+		<button id="btn_cotexto"> Color texto </button>
+		<button id="btn_tiempo"> Tiempo </button>
+		<button id="btn_cuadros"> Cuadricula </button>
+		<button id="btn_mapa"> Esconde/Mostrar Mapa </button>
+		<button id="btn_tablas"> Esconde/Mostrar Tablas </button>
+		<hr/>
+		<input type="color" id="color">
+		<button id="btn_new"> Nuevo Personaje </button>
+		<button id="btn_ene"> Nuevo Enemigo </button>
+		<button id="btn_contador"> Nuevo Contador </button>
+		<hr/>
+		Carluladora: <input type="text" id="calculadora" placeholder="2+3"><b>=</b><span id="resultado"></span>
+		<hr/>
+		<span id="posicionEjemplo"></span>
+		<div id="divTablas" class="cudro esconder">
+			<img src="tablas/0.png" >
+			<img src="tablas/1.png" >
+			<img src="tablas/2.png" >
+			<img src="tablas/3.png" >
+		</div>
+		<div id="divCanvas" class="cudroNegro">
+			<!--canvas-- id="canvas" width="85" height="40">Tu navegador no soporta html5...</!--canvas-->
+		</div>
+		<div id="divData" class="cudroData"></div>
+		<table>
+			<tr>
+				<td class="cudro"><div id="lista"></div></td>
+				<td class="cudro"><div id="datosJugador"></div></td>
+				<td class="cudroNpc"><div id="listaNpc"></div></td>
+				<td class="cudroContador"><div id="listContador"></div></td>
+			</tr>
+		</table>
+		<br/>
+		Creado por: Luis Bernal (guitarradeluis@gmail.com)
+	</body>
+<script src='./mapa.js'></script>
+<script src='./personajes.js'></script>
+<script src='./contador.js'></script>
+</html>
