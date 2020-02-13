@@ -299,6 +299,7 @@ var obj = {
 			listNpc();
 		};
 		detalleJugador.appendChild(exp);
+		detalleJugador.appendChild(document.createElement('br'));
 		var del = document.createElement('span');
 		del.innerHTML = "<b>Posicion</b> |";
 		del.style.cursor = "pointer";
@@ -319,6 +320,17 @@ var obj = {
 			listNpc();
 		};
 		detalleJugador.appendChild(vida);
+		var editTransfondo = document.createElement('span');
+		editTransfondo.innerHTML = "<b>Transfondos</b> |";
+		editTransfondo.style.cursor = "pointer";
+		editTransfondo.onclick = function(){
+			data.setTransfondos();
+			painData(id);
+			list();
+			listNpc();
+		};
+		detalleJugador.appendChild(editTransfondo);
+		detalleJugador.appendChild(document.createElement('br'));
 		var arma = document.createElement('span');
 		arma.innerHTML = "<b>+Arma</b> |";
 		arma.style.cursor = "pointer";
