@@ -19,25 +19,57 @@ var Jugador = function(tipo){
 	this.personaje = prompt("Nombre:", "");
 	this.nivel = 0;
 	this.experiencia = 0;
-	this.razaId = tipo? prompt("Tipo [0: Acechadores, 1: Arañas, 2: Masáscaras, 3: Sabuesos, 4: Sajadores, 5: Sanguijuelas, 6: Susurros]", ""): null;
-	this.raza = [
-		{id: 0, nombre:'Acechadores', mov: 0},
-		{id: 1, nombre:'Arañas', mov: 0},
-		{id: 2, nombre:'Masáscaras', mov: 0},
-		{id: 3, nombre:'Sabuesos', mov: 0},
-		{id: 4, nombre:'Sajadores', mov: 0},
-		{id: 5, nombre:'Sanguijuelas', mov: 0},
-		{id: 6, nombre:'Susurros', mov: 0},
-	];
-	this.claseId = tipo? prompt("Banda [0: Asesinos, 1: Bravos, 2: Buhoneros, 3: Contrabandistas, 4: Secta, 5: Sombras]", ""): null;
-	this.clase = [
-		{id: 0, nombre:'Asesinos', da: 0},
-		{id: 1, nombre:'Bravos', da: 0},
-		{id: 2, nombre:'Buhoneros', da: 0},
-		{id: 3, nombre:'Contrabandistas', da: 0},
-		{id: 4, nombre:'Secta', da: 0},
-		{id: 5, nombre:'Sombras', da: 0},
-	];
+	if(tipo){
+		var tmp =  prompt("Tipo [0: Acechadores, 1: Arañas, 2: Masáscaras, 3: Sabuesos, 4: Sajadores, 5: Sanguijuelas, 6: Susurros]", "");
+		switch(parseInt(tmp)){
+			case 0:
+				this.raza = {id: 0, nombre:'Acechadores', mov: 0};
+			break;
+			case 1:
+				this.raza = {id: 1, nombre:'Arañas', mov: 0};
+			break;
+			case 2:
+				this.raza = {id: 2, nombre:'Masáscaras', mov: 0};
+			break;
+			case 3:
+				this.raza = {id: 3, nombre:'Sabuesos', mov: 0};
+			break;
+			case 4:
+				this.raza = {id: 4, nombre:'Sajadores', mov: 0};
+			break;
+			case 5:
+				this.raza = {id: 5, nombre:'Sanguijuelas', mov: 0};
+			break;
+			case 6:
+				this.raza = {id: 6, nombre:'Susurros', mov: 0};
+			break;
+			default:
+				this.raza = {id: 6, nombre:'Susurros', mov: 0};
+		}
+		var tmp =  prompt("Banda [0: Asesinos, 1: Bravos, 2: Buhoneros, 3: Contrabandistas, 4: Secta, 5: Sombras]", "");
+		switch(parseInt(tmp)){
+			case 0:
+				this.clase = {id: 0, nombre:'Asesinos', da: 0};
+			break;
+			case 1:
+				this.clase = {id: 1, nombre:'Bravos', da: 0};
+			break;
+			case 2:
+				this.clase = {id: 2, nombre:'Buhoneros', da: 0};
+			break;
+			case 3:
+				this.clase = {id: 3, nombre:'Contrabandistas', da: 0};
+			break;
+			case 4:
+				this.clase = {id: 4, nombre:'Secta', da: 0};
+			break;
+			case 5:
+				this.clase = {id: 5, nombre:'Sombras', da: 0};
+			break;
+			default:
+				this.clase = {id: 5, nombre:'Sombras', da: 0};
+		}
+	}
 	this.talentos = [];
 	this.transfondos = prompt("Transfondos:", "");;
 	this.armas = [];

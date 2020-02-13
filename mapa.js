@@ -229,14 +229,10 @@ var obj = {
 		reload();
 	},
 	painData: (id, tipo)=>{
-		const { jugadores, painData, list, reload, tempPosicion } = obj;
+		const { jugadores, painData, list, listNpc, reload, tempPosicion } = obj;
 		var div = document.getElementById('datosJugador');
 		var data = jugadores.filter(j=> j.id == id);
 		data = data[0];
-		if(tipo){
-			var nombreRaza = data.raza.filter(ra => ra.id == data.razaId);
-			var nombreClase = data.clase.filter(cl => cl.id == data.claseId);
-		}
 		var arayHabilidades = [];
 		var totalHabilidad = 0;
 		data.habilidades.map(ha=>{
@@ -250,8 +246,8 @@ var obj = {
 					Nombre: <b>${data.personaje}</b> (${data.nombre})</b><br/>`;
 		if(tipo){
 			html += `
-					Tipo: <b>${nombreRaza[0].nombre} (MOV ${nombreRaza[0].mov})</b><br/>
-					Banda: <b>${nombreClase[0].nombre} (DA ${nombreClase[0].da})</b><br/>`;
+					Tipo: <b>${data.raza.nombre} (MOV ${data.raza.mov})</b><br/>
+					Banda: <b>${data.clase.nombre} (DA ${data.clase.da})</b><br/>`;
 		}else{
 			html += `PV: <b>${data.vida})</b><br/>`;
 
@@ -290,6 +286,7 @@ var obj = {
 			data.setOro();
 			painData(id);
 			list();
+			listNpc();
 		};
 		detalleJugador.appendChild(oro);
 		var exp = document.createElement('span');
@@ -299,6 +296,7 @@ var obj = {
 			data.setExp();
 			reload();
 			list();
+			listNpc();
 		};
 		detalleJugador.appendChild(exp);
 		var del = document.createElement('span');
@@ -308,6 +306,7 @@ var obj = {
 			data.setPosition(tempPosicion.x, tempPosicion.y);
 			painData(id);
 			list();
+			listNpc();
 		};
 		detalleJugador.appendChild(del);
 		var vida = document.createElement('span');
@@ -317,6 +316,7 @@ var obj = {
 			data.setVida();
 			painData(id);
 			list();
+			listNpc();
 		};
 		detalleJugador.appendChild(vida);
 		var arma = document.createElement('span');
@@ -326,6 +326,7 @@ var obj = {
 			data.addArma();
 			painData(id);
 			list();
+			listNpc();
 		};
 		detalleJugador.appendChild(arma);
 		var color = document.createElement('span');
@@ -336,6 +337,7 @@ var obj = {
 			painData(id);
 			reload();
 			list();
+			listNpc();
 		};
 		detalleJugador.appendChild(color);
 		var del = document.createElement('span');
@@ -345,6 +347,7 @@ var obj = {
 			data.eliminar();
 			painData(id);
 			list();
+			listNpc();
 		};
 		detalleJugador.appendChild(del);
 		/*
@@ -380,6 +383,7 @@ var obj = {
 				data.editArma(ha.id);
 				painData(id);
 				list();
+				listNpc();
 			}
 			var delarma = document.createElement('span');
 			delarma.innerHTML = " <b>Deleted</b>";
@@ -388,6 +392,7 @@ var obj = {
 				data.deleteArma(ha.id);
 				painData(id);
 				list();
+				listNpc();
 			}
 			var li = document.createElement('li');
 			li.style.cursor = "pointer";
@@ -462,6 +467,7 @@ var obj = {
 						dia.noche = false;
 					}else{
 						dia.noche = true;
+						dia.mint = 0;
 					}
 				}else{
 					dia.numero = parseInt(dia.numero) + 1;
