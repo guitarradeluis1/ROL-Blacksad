@@ -14,6 +14,7 @@ window.onload = function() {
 	document.getElementById('btn_contador').onclick = function(){ obj.contador(); };
 	document.getElementById('btn_mapa').onclick = function(){ obj.toogleMapa(); };
 	document.getElementById('btn_tablas').onclick = function(){ obj.toogleTabla(); };
+	document.getElementById('btn_tiradas').onclick = function(){ obj.toogleTiradas(); };
 	document.getElementById('btn_personajes').onclick = function(){ obj.tooglePersonajes(); };
 	document.getElementById('calculadora').onkeyup = function(){ obj.calculadora(); };
 	obj.start();
@@ -65,6 +66,9 @@ var obj = {
 	},
 	tooglePersonajes: ()=>{
 		document.getElementById('divInfpersonajes').classList.toggle('esconder');
+	},
+	toogleTiradas: ()=>{
+		document.getElementById('divInftiradas').classList.toggle('esconder');
 	},
 	start: ()=>{
 		const { sizeWidth, sizeHeight, getMousePos, tempPosicion } = obj;
